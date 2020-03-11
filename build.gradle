@@ -1,0 +1,11 @@
+plugins{
+    id "idea"
+    id "eclipse"
+}
+
+
+dependencies{
+
+    // Build the core project
+    project(":core")
+}
