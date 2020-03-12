@@ -8,4 +8,10 @@ dependencies{
 
     // Build the core project
     project(":core")
+
+    // Build all platform projects
+    project(":platform")
+    project(":platform:roborio")
+    project(":platform:ev3")
+    project(":platform:rpi")
 }

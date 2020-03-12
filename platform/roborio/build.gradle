@@ -1,3 +1,49 @@
 plugins{
-    id "java"
+    id 'java-library'
+}
+
+repositories {
+    // Main repos
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+
+    // FRC repos
+    maven { setUrl("https://frcmaven.wpi.edu/artifactory/release/")}
+    maven { setUrl("https://repo1.maven.org/maven2/")}
+}
+
+dependencies {
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    api 'org.apache.commons:commons-math3:3.6.1'
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:27.0.1-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+
+    // WPILib
+    implementation("edu.wpi.first.wpilibj:wpilibj-java:2020.3.2")
+    implementation("edu.wpi.first.hal:hal-java:2020.3.2")
+    implementation("edu.wpi.first.wpiutil:wpiutil-java:2020.3.2")
+
+    // WPILib Extras
+    implementation("edu.wpi.first.ntcore:ntcore-java:2020.3.2")
+    implementation("edu.wpi.first.cscore:cscore-java:2020.3.2")
+    implementation("edu.wpi.first.cameraserver:cameraserver-java:2020.3.2")
+
+    // WPILib command framework
+    implementation("edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:2020.3.2")
+
+    // NavX
+    implementation("com.kauailabs.navx.frc:navx-java:3.1.400")
+
+    // CTRE
+    implementation("com.ctre.phoenix:api-java:5.17.6")
+    implementation("com.ctre.phoenix:wpiapi-java:5.17.6")
+
+    // REV Robotics
+    implementation("com.revrobotics.frc:ColorSensorV3-java:1.0.1")
+    implementation("com.revrobotics.frc:SparkMax-java:1.5.1")
 }

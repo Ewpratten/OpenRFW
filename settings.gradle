@@ -9,4 +9,4 @@
 
 rootProject.name = 'OpenRFW'
 
-include 'core'
+include 'core', 'platform', 'platform:roborio', 'platform:rpi', 'platform:ev3'
